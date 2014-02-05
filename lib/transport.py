@@ -91,7 +91,6 @@ class Transport():
 
     def get_instance(self,session_key):
         for instance in self.instances:
-
             if str(instance.session_key) == str(session_key):
                 return instance
 
@@ -116,8 +115,11 @@ class Transport():
                     socket.send(data)
                     self.data_push.remove(data)
 
+                # to decrease CPU usage
+                time.sleep(0.001)
             except:
                 traceback.print_exc()
+
 
     # DONT start this right in the beginning coz u dont know what is the session key of the game instance
     # todo see whether client has to subscribe to many session keys
@@ -135,5 +137,8 @@ class Transport():
                 #self.data_sub.append(json.loads(data))
                 thread = threading.Thread(target=self.parse_response, args=(json.loads(data),))
                 thread.start()
+
+                # to decrease CPU usage
+                time.sleep(0.001)
             except:
                 traceback.print_exc()
