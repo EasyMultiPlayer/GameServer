@@ -1,4 +1,4 @@
-import config
+from pyserver import config
 import time
 
 
@@ -10,6 +10,7 @@ def debug(message, key=""):
     return getCurrentTime() + ":" + key + ":" + message
 
 
+# TODO fix all these missing things
 def error(message):
     errorLog = open(config.ERROR_LOG, "a")
     errorLog.write("\n" + debug(message, "[ERROR]"))

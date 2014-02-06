@@ -1,13 +1,12 @@
 import zmq
 import json
 import traceback
-import config
 import time
 import threading
 import logging
 from userOverrides import Instance,Protocol
-from res import actions
-
+from pyserver.res import actions
+from pyserver import config
 
 class Transport():
     data_push = []
