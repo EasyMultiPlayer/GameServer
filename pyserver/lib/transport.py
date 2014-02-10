@@ -5,8 +5,8 @@ import time
 import threading
 import logging
 from userOverrides import Instance,Protocol
-from pyserver.res import actions
-from pyserver import config
+from res import actions
+import config
 
 class Transport():
     data_push = []

@@ -1,7 +1,7 @@
 import json
 from gameState import GameState
 import logging
-from pyserver import config
+import config
 class BaseProtocol():
 
     def __init__(self):

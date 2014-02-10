@@ -1,4 +1,4 @@
-from pyserver import config
+import config
 import time
 
 
